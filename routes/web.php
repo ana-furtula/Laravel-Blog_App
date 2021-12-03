@@ -13,14 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('blog.index');
-})->name('blog.index');
+Route::get('/', [
+    'uses' => 'PostController@getIndex',
+    'as' => 'blog.index'
+]);
+
+Route::get('post/{id}', [
+    'uses' => 'PostController@getPost',
+    'as' => 'blog.post'
+]);
 
 Route::get('about', function () {
     return view('other.about');
 })->name('other.about');
 
-Route::get('admin', function () {
-    return view('admin.index');
-})->name('admin.index');
+Route::get('admin', [
+    'uses' => 'PostController@getAdminIndex',
+    'as' => 'admin.index'
+]);
