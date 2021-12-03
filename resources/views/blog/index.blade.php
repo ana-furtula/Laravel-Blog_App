@@ -10,13 +10,13 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <h1 class="post-title">{{ $post->title }}</h1>
-        <p>{{ $post->content }}!</p>
-        <!-- <p><a href="{{ route('blog.post', ['id' => $post->id]) }}">Read more...</a></p> -->
+        <p>{{ substr($post->content, 0,200) }}...</p>
+        <p><a href="{{ route('blog.post', ['id' => $post->id]) }}">Read more...</a></p>
     </div>
 </div>
 <hr>
 @endforeach
-<div class="row">
+<div class="row" style="padding: 2rem 2rem 2rem 2rem;">
     <div class="col-md-12 text-center">
         {{ $posts->links() }}
     </div>
