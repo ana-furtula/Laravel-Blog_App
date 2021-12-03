@@ -15,6 +15,14 @@
                     <textarea style="font-family: 'Times New Roman', Times, serif; font-size: 1.3rem;" class="form-control" id="content" name="content" rows="8" cols="50" value="{{ $post->content }}">{{ $post->content }}</textarea>
                 </div>
 
+                @foreach($tags as $tag)
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="tags[]" value="{{ $tag->id }}" {{ $post->tags->contains($tag->id)? 'checked':''}}> {{$tag->name}}
+                    </label>
+                </div>
+                @endforeach
+
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{ $postId }}">
                 <div class="form-group">

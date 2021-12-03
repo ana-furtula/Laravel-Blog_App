@@ -15,9 +15,17 @@
                     <textarea style="font-family: 'Times New Roman', Times, serif; font-size: 1.3rem;" class="form-control" id="content" name="content" rows="8" cols="50"></textarea>
                 </div>
 
+                @foreach($tags as $tag)
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="tags[]" value="{{ $tag->id }}"> {{ $tag->name }}
+                    </label>
+                </div>
+                @endforeach
+
                 {{ csrf_field() }}
                 <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>

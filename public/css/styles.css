@@ -1,9 +1,15 @@
+body {
+    background-image: url('../images/bg1.jpg');
+}
+
 .quote {
     font: 400 72px "Arizonia", Helvetica, sans-serif;
-    color: #F4645F;
+    /* color: #F4645F; */
+    color: rgb(204, 0, 0);
     text-align: center;
+    font-weight: bolder;
 }
 
 .post-title {
-    color: #F4645F;
+    color: rgb(0, 76, 153);
 }
